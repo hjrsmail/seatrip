@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { format, getDay } from "date-fns";
 import { id } from "date-fns/locale";
 import clsx from "clsx";
-import { sendForm, EmailJSResponseStatus } from "@emailjs/browser";
+import { sendForm } from "@emailjs/browser";
 
 interface BookingModalProps {
     selectedDate: Date;
