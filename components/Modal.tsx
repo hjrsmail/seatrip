@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { format, getDay } from "date-fns";
 import { id } from "date-fns/locale";
 import clsx from "clsx";
@@ -49,6 +49,12 @@ export default function BookingModal({ selectedDate, onClose }: BookingModalProp
         setter((prev) => Math.max(prev + value, 0));
     };
 
+    useEffect(() => {
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, []);
 
     const form = useRef<HTMLFormElement | null>(null);
     const handleSubmit = async () => {
@@ -102,6 +108,7 @@ export default function BookingModal({ selectedDate, onClose }: BookingModalProp
                 <button
                     className="absolute top-3 right-4 text-gray-500 hover:text-gray-700 text-lg"
                     onClick={onClose}
+                    aria-label="Tutup Modal"
                 >
                     ✕
                 </button>
@@ -171,6 +178,7 @@ export default function BookingModal({ selectedDate, onClose }: BookingModalProp
                             onClick={() => setStep(2)}
                             className={clsx("w-full mt-3 px-4 py-2 rounded-md text-white font-semibold active:scale-95 transition-transform duration-150 ease-in-out", { "bg-blue-500 hover:bg-blue-600": isTiketValid, "bg-gray-400 cursor-not-allowed": !isTiketValid })}
                             disabled={!isTiketValid}
+                            aria-label="Lanjut ke Form Data Diri"
                         >
                             Selanjutnya
                         </button>
