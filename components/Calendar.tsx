@@ -41,6 +41,7 @@ export default function MyCalendar() {
                         setIsModalOpen(true);
                     }}
                     className="bg-blue-500"
+                    aria-label="Hari Ini"
                 >
                     Hari Ini
                 </Button>
@@ -64,7 +65,8 @@ export default function MyCalendar() {
 
                 value={selectedDate}
                 locale="id-ID"
-                calendarType="iso8601"
+                calendarType="hebrew"
+                defaultView="month"
                 tileClassName={tileClassName}
                 tileDisabled={tileDisabled}
                 prevLabel="◀"
