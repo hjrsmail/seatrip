@@ -28,7 +28,7 @@ export default function BookingModal({ selectedDate, onClose }: BookingModalProp
     const isWeekend = day === 0 || day === 6;
     const hargaTiket = isWeekend ? 25000 : 15000;
     const hargaMobil = 5000;
-    const hargaMotor = 3000;
+    const hargaMotor = 2000;
 
     const total = jumlahTiket * hargaTiket + mobil * hargaMobil + motor * hargaMotor;
 
