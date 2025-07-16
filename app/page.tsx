@@ -22,9 +22,9 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:pt-8 lg:pt-3">
                     {/* Info */}
                     <div className="space-y-6 px-4 py-6 md:py-2 md:px-3">
-                        <h1 className="text-2xl md:text-4xl font-bold text-blue-500">Pantai Galesong</h1>
+                        <h1 className="text-2xl md:text-4xl font-bold text-blue-500">Wisata Pantai Galesong</h1>
                         <p className="text-gray-700 text-base md:text-lg text-justify leading-relaxed">
-                            Pantai Galesong terletak di Kabupaten Takalar, Sulawesi Selatan. Pantai ini menawarkan pemandangan laut yang indah,
+                            Wisata Pantai Galesong terletak di Kabupaten Takalar, Sulawesi Selatan. Pantai ini menawarkan pemandangan laut yang indah,
                             dengan suasana yang tenang dan cocok untuk liburan keluarga maupun rombongan. Dilengkapi berbagai fasilitas dan wahana air.
                         </p>
 
