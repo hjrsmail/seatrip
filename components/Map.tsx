@@ -6,11 +6,11 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 const customIcon = L.icon({
-  iconUrl: "/logo.webp", // pastikan path relatif dari public
+  iconUrl: "/logo.webp",
   iconRetinaUrl: "/logo.webp",
-  iconSize: [40, 40], // ukuran disesuaikan dengan proporsi logomu
+  iconSize: [100, 60], // ukuran disesuaikan 
   iconAnchor: [20, 40], // titik pada ikon yang dianggap sebagai 'titik lokasi'
-  popupAnchor: [0, -40], // posisi popup terhadap ikon
+  popupAnchor: [0, -20], // posisi popup terhadap ikon
   shadowUrl: "/leaflet/marker-shadow.png",
   shadowSize: [41, 41],
   shadowAnchor: [12, 41],
@@ -31,7 +31,7 @@ export default function LocationMap() {
 
     const LAT = -5.241338129140065;
     const LNG = 119.38031379122769;
-    const locationName = "Pantai Galesong";
+    const locationName = "Wisata Pantai Galesong";
 
     if (!mounted) return null;
 
@@ -53,7 +53,7 @@ export default function LocationMap() {
                             href={`https://www.openstreetmap.org/?mlat=${LAT}&mlon=${LNG}#map=16/${LAT}/${LNG}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-600 underline"
+                            className="text-blue-600"
                         >
                             {locationName}
                         </a>
