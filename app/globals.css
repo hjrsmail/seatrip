@@ -3,16 +3,30 @@
 
 @layer components {
   .react-calendar__month-view__days {
-    @apply gap-0.5;
+    @apply gap-0;
     display: grid !important;
     grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
   }
 
-  .react-calendar__tile {
-    @apply text-center border border-gray-200 transition-all text-sm sm:text-sm md:text-base lg:text-lg;
-    padding: 1rem 0.25rem !important;
-    min-height: auto !important;
+  .react-calendar__month-view__weekdays__weekday {
+    @apply text-center;
+    @apply text-sm sm:text-lg md:text-base;
   }
+
+  .react-calendar__tile {
+    @apply relative border border-gray-200 text-sm md:text-base p-2 sm:p-3 md:p-6;
+    min-height: 80px !important;
+  }
+
+  .react-calendar__tile abbr {
+    @apply absolute top-1 right-1 text-right;
+  }
+
+  .react-calendar__navigation__label {
+    font-size: 20px !important;
+    @apply font-semibold;
+  }
+
 
   .calendar-past {
     @apply bg-gray-300 text-white;
@@ -69,4 +83,5 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
