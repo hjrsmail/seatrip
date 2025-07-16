@@ -1,27 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { HomeIcon, Menu, X } from "lucide-react";
+import { Book, HomeIcon, Menu, X } from "lucide-react";
 import clsx from "clsx";
 import Image from "next/image";
 import Logo from "@/public/logo.webp";
 import Button from "@/components/ui/Button";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
 
     return (
         <header className="fixed top-0 w-full z-50 backdrop-blur bg-white/20 text-black shadow-md">
             <nav className="bg-transparent text-white">
                 <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16 ">
-                        <div className="flex items-center gap-3 flex-shrink-0">
+                    <div className="flex justify-between items-center h-20 lg:h-24">
+                        <div className="flex items-center flex-shrink-0">
                             <Image
-                                src={Logo}
+                                src="/logo.webp"
                                 alt="Logo"
-                                width={50}
-                                height={50}
+                                width={100}
+                                height={40}
                                 className="object-contain"
                             />
                             {/* <p className="text-2xl text-b light">Pantai Galesong</p> */}
@@ -31,17 +34,32 @@ export default function Header() {
                             <Link
                                 href="/"
                                 onClick={(e) => {
-                                    if (window.location.pathname === "/") {
+                                    if (pathname === "/") {
                                         e.preventDefault();
                                         window.scrollTo({ top: 0, behavior: "smooth" });
                                     }
                                 }}
-                                className="bg-blue-500 text-white py-2 px-4 rounded-xl"
+                                className={clsx(
+                                    "py-2 px-4 rounded-xl font-bold transition-all duration-300",
+                                    pathname === "/"
+                                        ? "bg-blue-500 text-white"
+                                        : "text-black hover:bg-blue-500 hover:text-white"
+                                )}
                             >
                                 Beranda
                             </Link>
-                            <Link href="/panduan" className=" text-black hover:bg-blue-500 hover:text-white py-2 px-4 rounded-xl transition-all duration-300">Panduan</Link>
 
+                            <Link
+                                href="/panduan"
+                                className={clsx(
+                                    "py-2 px-4 rounded-xl font-bold transition-all duration-300",
+                                    pathname === "/panduan"
+                                        ? "bg-blue-500 text-white"
+                                        : "text-black hover:bg-blue-500 hover:text-white"
+                                )}
+                            >
+                                Panduan
+                            </Link>
                         </div>
 
                         <div className="md:hidden">
@@ -81,18 +99,39 @@ export default function Header() {
             >
                 {/* Header dalam sidebar */}
                 <div className="flex items-center justify-between p-4 border-b">
-                    <Image src={Logo} alt="Logo" width={40} height={40} />
+                    <Image src={Logo} alt="Logo" width={50} height={50} />
                     <button onClick={() => setIsOpen(false)} aria-label="Close sidebar">
                         <X size={24} className="text-black" />
                     </button>
                 </div>
 
                 {/* Menu dalam sidebar */}
-                <div className="bg-white flex flex-col p-4 space-y-4 text-black">
+                <div className="bg-white flex flex-col p-4 gap-y-1 text-black">
                     <Link href="/" onClick={() => setIsOpen(false)}>
-                        <div className="flex bg-blue-500 text-white py-2 px-4 rounded-xl items-center gap-2">
+                        <div
+                            className={clsx(
+                                "flex py-2 px-4 rounded-xl items-center gap-2",
+                                pathname === "/"
+                                    ? "bg-blue-500 text-white"
+                                    : "text-black hover:bg-blue-500 hover:text-white"
+                            )}
+                        >
                             <HomeIcon className="w-5 h-5" />
                             <span>Beranda</span>
+                        </div>
+                    </Link>
+
+                    <Link href="/panduan" onClick={() => setIsOpen(false)}>
+                        <div
+                            className={clsx(
+                                "flex py-2 px-4 rounded-xl items-center gap-2",
+                                pathname.startsWith("/panduan")
+                                    ? "bg-blue-500 text-white"
+                                    : "text-black hover:bg-blue-500 hover:text-white"
+                            )}
+                        >
+                            <Book className="w-5 h-5" />
+                            <span>Panduan</span>
                         </div>
                     </Link>
                 </div>
