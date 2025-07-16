@@ -15,7 +15,7 @@ const images = [
 
 const captions = [
     {
-        title: "Selamat Datang di Pantai Galesong",
+        title: "Selamat Datang di Wisata Pantai Galesong",
         subtitle: "Nikmati liburanmu dengan panorama indah dan wahana seru!",
     },
     {
