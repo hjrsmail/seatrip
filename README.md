@@ -1,6 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌊 Wisata Pantai Galesong
 
-## Getting Started
+Website pemesanan tiket digital untuk destinasi wisata **Pantai Galesong**, dirancang responsif dan mudah digunakan baik dari desktop maupun mobile.
+
+## ✨ Fitur Unggulan
+
+- 🎟️ Pemesanan tiket masuk + parkir kendaraan
+- 📅 Kalender interaktif (React Calendar)
+- 📍 Peta lokasi langsung dari OpenStreetMap (Leaflet.js)
+- 📧 Pengiriman email otomatis ke pengguna tanpa backend (EmailJS)
+- 📱 Desain mobile-friendly
+- 🧾 Hitung total pembayaran berdasarkan hari dan pilihan
+- 🪟 Modal interaktif untuk form dan detail booking
+
+## 🛠️ Teknologi yang Digunakan
+
+- **Next.js (App Router)**
+- **Tailwind CSS**
+- **React Calendar**
+- **Leaflet + React Leaflet**
+- **EmailJS**
+
+
+## 🚀 Getting Started
 
 First, run the development server:
 
