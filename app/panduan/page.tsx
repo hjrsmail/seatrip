@@ -15,7 +15,7 @@ export default function GuidePage() {
 
     return (
         <>
-            <div className="h-screen max-h-[90vh] lg:max-h-[100vh] pt-24 lg:pt-28 px-4">
+            <div className="pt-24 lg:pt-28 px-4">
                 <div className="max-w-screen-lg mx-auto space-y-6">
                     <h1 className="text-3xl font-bold text-center">{guide.title}</h1>
                     <PDFViewer filePath={guide.file_path} />
